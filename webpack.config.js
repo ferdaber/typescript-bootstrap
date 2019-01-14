@@ -17,7 +17,7 @@ function formatWindowsUri(path) {
 }
 
 module.exports = /** @type {import('webpack').Configuration} */ ({
-  entry: [path.resolve(srcDir, 'tailwind.css'), path.resolve(srcDir, 'index.tsx')],
+  entry: [path.resolve(srcDir, 'globals.css'), path.resolve(srcDir, 'index.tsx')],
   output: {
     path: buildDir,
     // filename is the template for entry points

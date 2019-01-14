@@ -168,9 +168,9 @@ module.exports = {
 
   screens: {
     'sm': '576px',
-    'md': '768px',
+    // 'md': '768px',
     'lg': '992px',
-    'xl': '1200px',
+    // 'xl': '1200px',
   },
 
 
@@ -195,39 +195,40 @@ module.exports = {
 
   fonts: {
     'sans': [
+      'Roboto',
+      'Lato',
       'system-ui',
-      'BlinkMacSystemFont',
+      // 'BlinkMacSystemFont',
       '-apple-system',
       'Segoe UI',
-      'Roboto',
-      'Oxygen',
-      'Ubuntu',
-      'Cantarell',
-      'Fira Sans',
-      'Droid Sans',
-      'Helvetica Neue',
+      // 'Oxygen',
+      // 'Ubuntu',
+      // 'Cantarell',
+      // 'Fira Sans',
+      // 'Droid Sans',
+      // 'Helvetica Neue',
       'sans-serif',
     ],
-    'serif': [
-      'Constantia',
-      'Lucida Bright',
-      'Lucidabright',
-      'Lucida Serif',
-      'Lucida',
-      'DejaVu Serif',
-      'Bitstream Vera Serif',
-      'Liberation Serif',
-      'Georgia',
-      'serif',
-    ],
-    'mono': [
-      'Menlo',
-      'Monaco',
-      'Consolas',
-      'Liberation Mono',
-      'Courier New',
-      'monospace',
-    ],
+    // 'serif': [
+    //   'Constantia',
+    //   'Lucida Bright',
+    //   'Lucidabright',
+    //   'Lucida Serif',
+    //   'Lucida',
+    //   'DejaVu Serif',
+    //   'Bitstream Vera Serif',
+    //   'Liberation Serif',
+    //   'Georgia',
+    //   'serif',
+    // ],
+    // 'mono': [
+    //   'Menlo',
+    //   'Monaco',
+    //   'Consolas',
+    //   'Liberation Mono',
+    //   'Courier New',
+    //   'monospace',
+    // ],
   },
 
 
@@ -280,15 +281,15 @@ module.exports = {
   */
 
   fontWeights: {
-    'hairline': 100,
-    'thin': 200,
-    'light': 300,
+    // 'hairline': 100,
+    // 'thin': 200,
+    // 'light': 300,
     'normal': 400,
     'medium': 500,
-    'semibold': 600,
+    // 'semibold': 600,
     'bold': 700,
-    'extrabold': 800,
-    'black': 900,
+    // 'extrabold': 800,
+    // 'black': 900,
   },
 
 

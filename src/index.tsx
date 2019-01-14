@@ -4,12 +4,6 @@ import { css } from 'astroturf'
 import { cx } from 'utils'
 
 const styles = css`
-  :global {
-    .global-class {
-      font-family: Roboto, Lato, sans-serif;
-    }
-  }
-
   .app {
     font-weight: bold;
   }
