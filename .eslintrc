@@ -1,8 +1,14 @@
 {
   "parser": "typescript-eslint-parser",
-  "extends": ["eslint:recommended", "prettier"],
-  "plugins": ["typescript", "prettier"],
+  "extends": ["eslint:recommended", "plugin:react/recommended", "prettier", "prettier/react"],
+  "plugins": ["typescript", "react", "prettier"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "env": {
+    "browser": true,
     "jest": true,
     "es6": true,
     "node": true
@@ -12,6 +18,14 @@
   },
   "rules": {
     "no-console": "off",
-    "no-unused-vars": "off"
+    "no-unused-vars": "off",
+    "react/prop-types": "off",
+    "react/jsx-sort-props": [
+      "error",
+      {
+        "shorthandFirst": true,
+        "reservedFirst": true
+      }
+    ]
   }
 }

@@ -1,12 +1,15 @@
 {
   "presets": [
+    "@babel/preset-react",
     [
       "@babel/preset-env",
       {
         "loose": true,
         "modules": "commonjs",
         "targets": {
-          "node": 10
+          "chrome": 69,
+          "safari": 12,
+          "firefox": 57
         }
       }
     ],

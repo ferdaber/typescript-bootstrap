@@ -4,11 +4,13 @@ function getMockFile(path) {
 
 module.exports = {
   modulePaths: ['src'],
-  moduleFileExtensions: ['ts', 'js'],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   setupFiles: ['<rootDir>/jest.setup.js'],
   testURL: 'https://localhost',
   transform: {
     '\\.[tj]sx?$': 'babel-jest',
   },
-  moduleNameMapper: {},
+  moduleNameMapper: {
+    '^astroturf$': getMockFile('astroturf'),
+  },
 }
