@@ -10,7 +10,5 @@ module.exports = {
   transform: {
     '\\.[tj]sx?$': 'babel-jest',
   },
-  moduleNameMapper: {
-    '^astroturf$': getMockFile('astroturf'),
-  },
+  moduleNameMapper: {},
 }

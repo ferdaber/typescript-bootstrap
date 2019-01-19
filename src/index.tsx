@@ -1,16 +1,15 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { css } from 'astroturf'
-import { cx } from 'utils'
+import { css } from '@emotion/core'
 
 const styles = css`
-  .app {
-    font-weight: bold;
-  }
+  font-weight: bold;
 `
 
 const App = () => (
-  <div className={cx(styles.app, 'global-class container mx-auto text-center py-4')}>Hi!</div>
+  <div className="global-class container mx-auto text-center py-4" css={styles}>
+    Hi!
+  </div>
 )
 
 render(<App />, document.getElementById('root'))

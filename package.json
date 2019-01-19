@@ -17,7 +17,7 @@
     "lint:fix": "yarn lint --fix"
   },
   "dependencies": {
-    "astroturf": "^0.8.4",
+    "@emotion/core": "^10.0.6",
     "react": "^16.8.0-alpha.0",
     "react-dom": "^16.8.0-alpha.0"
   },
@@ -29,6 +29,7 @@
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.1.0",
+    "@emotion/babel-preset-css-prop": "^10.0.6",
     "@types/jest": "^23.3.12",
     "@types/react": "^16.7.18",
     "@types/react-dom": "^16.0.11",

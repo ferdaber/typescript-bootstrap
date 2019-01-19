@@ -77,6 +77,7 @@ module.exports = /** @type {import('webpack').Configuration} */ ({
                       },
                     ],
                     '@babel/preset-typescript',
+                    '@emotion/babel-preset-css-prop',
                   ],
                   plugins: [
                     // decorators have to come before class proeprties
@@ -93,42 +94,17 @@ module.exports = /** @type {import('webpack').Configuration} */ ({
                   ],
                 },
               },
-              {
-                loader: 'astroturf/loader',
-                options: {
-                  extension: '.module.css',
-                },
-              },
             ],
-          },
-          // we process tailwind separately here to prevent
-          // css-loader from exporting all of its class names due to CSS modules
-          {
-            test: /tailwind\.css$/,
-            sideEffects: true,
-            use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
           },
           {
             test: /\.css$/,
-            // always import CSS files even if the module's package.json
-            // says sideEffects: false
             sideEffects: true,
             use: [
               MiniCssExtractPlugin.loader,
               {
                 loader: 'css-loader',
                 options: {
-                  // exports class names with their camelcase versions as well
-                  camelCase: true,
-                  // use postcss-loader for imported css files (@import staetments)
-                  importLoaders: 1,
-                  // consider https://github.com/facebook/create-react-app/blob/master/packages/react-dev-utils/getCSSModuleLocalIdent.js
-                  localIdentName: '[hash:base64:7]__[local]',
-                  modules: true,
-                  // NB - may be unstable
                   sourceMap: true,
-                  // should be true but CSS extract plugin crashes without it
-                  exportOnlyLocals: false,
                 },
               },
               'postcss-loader',
