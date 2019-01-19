@@ -14,10 +14,12 @@
     "ts": "tsc",
     "ts:watch": "tsc --watch",
     "lint": "eslint 'src/**/*.{ts,tsx,js,jsx}'",
-    "lint:fix": "yarn lint --fix"
+    "lint:fix": "yarn lint --fix",
+    "checks": "yarn lint:fix && yarn test && yarn ts"
   },
   "dependencies": {
     "@emotion/core": "^10.0.6",
+    "clsx": "^1.0.1",
     "react": "^16.8.0-alpha.0",
     "react-dom": "^16.8.0-alpha.0"
   },
