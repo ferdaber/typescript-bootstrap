@@ -1,7 +1,18 @@
 {
-  "parser": "typescript-eslint-parser",
-  "extends": ["eslint:recommended", "plugin:react/recommended", "prettier", "prettier/react"],
-  "plugins": ["typescript", "react", "prettier"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "prettier",
+    "prettier/@typescript-eslint",
+    "prettier/react"
+  ],
+  "plugins": ["@typescript-eslint", "react", "prettier"],
   "settings": {
     "react": {
       "version": "detect"
@@ -13,12 +24,11 @@
     "es6": true,
     "node": true
   },
-  "parserOptions": {
-    "sourceType": "module"
-  },
   "rules": {
     "no-console": "off",
     "no-unused-vars": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-empty-interface": "off",
     "react/prop-types": "off",
     "react/jsx-sort-props": [
       "error",
