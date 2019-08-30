@@ -29,6 +29,7 @@
     "no-unused-vars": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-empty-interface": "off",
+    "@typescript-eslint/no-var-requires": "off",
     "react/prop-types": "off",
     "react/jsx-sort-props": [
       "error",
