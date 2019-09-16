@@ -69,6 +69,7 @@ module.exports = /** @type {import('webpack').Configuration} */ ({
                       {
                         loose: true,
                         modules: false,
+                        useBuiltIns: 'entry',
                         corejs: {
                           version: 3,
                           proposals: true,
