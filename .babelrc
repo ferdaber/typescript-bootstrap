@@ -5,7 +5,11 @@
       "@babel/preset-env",
       {
         "loose": true,
-        "modules": "commonjs",
+        "modules": false,
+        "corejs": {
+          "version": 3,
+          "proposals": true
+        },
         "targets": {
           "chrome": 69,
           "safari": 12,
@@ -24,6 +28,7 @@
       }
     ],
     "@babel/plugin-proposal-class-properties",
-    "@babel/plugin-proposal-throw-expressions"
+    "@babel/plugin-proposal-throw-expressions",
+    "@babel/plugin-proposal-numeric-separator"
   ]
 }

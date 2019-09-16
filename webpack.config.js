@@ -69,6 +69,10 @@ module.exports = /** @type {import('webpack').Configuration} */ ({
                       {
                         loose: true,
                         modules: false,
+                        corejs: {
+                          version: 3,
+                          proposals: true,
+                        },
                         targets: {
                           chrome: 69,
                           safari: 12,
@@ -91,6 +95,7 @@ module.exports = /** @type {import('webpack').Configuration} */ ({
                     ],
                     '@babel/plugin-proposal-class-properties',
                     '@babel/plugin-proposal-throw-expressions',
+                    '@babel/plugin-proposal-numeric-separator',
                   ],
                 },
               },

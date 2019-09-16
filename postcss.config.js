@@ -1,4 +1,10 @@
 module.exports = {
-  plugins: [require('tailwindcss'), require('precss'), require('autoprefixer')],
+  plugins: [
+    require('postcss-import'),
+    require('precss'),
+    require('autoprefixer'),
+    require('postcss-preset-env'),
+    require('cssnano'),
+  ],
   sourceMap: true,
 }
