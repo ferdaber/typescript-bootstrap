@@ -1,5 +1,6 @@
-it('renders', () => {
-  expect(() => require('index')).not.toThrow()
-})
+import { isValidElement } from "react";
+import App from "src/components/App";
 
-export {}
+test("App", () => {
+  expect(isValidElement(App())).toBeTruthy();
+});
