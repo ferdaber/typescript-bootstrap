@@ -41,5 +41,6 @@ module.exports = {
         loose: true,
       },
     ],
+    "babel-plugin-macros",
   ],
 };
