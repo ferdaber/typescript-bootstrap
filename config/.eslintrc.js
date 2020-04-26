@@ -12,7 +12,13 @@ module.exports = {
     "prettier/@typescript-eslint",
     "prettier/react",
   ],
-  plugins: ["@typescript-eslint", "react", "react-hooks", "prettier"],
+  plugins: [
+    "@typescript-eslint",
+    "react",
+    "react-hooks",
+    "prettier",
+    "@ferdaber/sorting",
+  ],
   settings: {
     react: {
       version: "detect",
@@ -25,6 +31,7 @@ module.exports = {
     node: true,
   },
   rules: {
+    "@ferdaber/sorting/sort-imports": ["error", { fix: true }],
     "no-unused-vars": "off",
     "no-console": "off",
     "no-redeclare": "off",
