@@ -69,7 +69,7 @@ module.exports = /** @type {import('webpack').Configuration} */ ({
                 // parses and pre-evaluates CSS-in-JS
                 // and creates a .css file out of it,
                 // needs loaders for .css files below
-                loader: "linaria/loader",
+                loader: "@linaria/webpack4-loader",
                 options: {
                   sourceMap: dev,
                   babelOptions: {
@@ -84,9 +84,6 @@ module.exports = /** @type {import('webpack').Configuration} */ ({
             use: [
               {
                 loader: MiniCssExtractPlugin.loader,
-                options: {
-                  sourceMap: dev,
-                },
               },
               {
                 loader: "css-loader",
@@ -150,13 +147,17 @@ module.exports = /** @type {import('webpack').Configuration} */ ({
       publicPath,
     }),
     // copies the static dir without index.html
-    new (require("copy-webpack-plugin"))([
-      {
-        from: staticDir,
-        to: path.resolve(buildDir, "static"),
-        ignore: ["index.ejs"],
-      },
-    ]),
+    new (require("copy-webpack-plugin"))({
+      patterns: [
+        {
+          from: staticDir,
+          to: path.resolve(buildDir, "static"),
+          globOptions: {
+            ignore: ["index.ejs"],
+          },
+        },
+      ],
+    }),
     new MiniCssExtractPlugin({
       // filename is the template for entry points
       // chunk is the template for generated (split) assets from the entry point
@@ -173,14 +174,12 @@ module.exports = /** @type {import('webpack').Configuration} */ ({
       // terser supports > ES5 syntax
       new (require("terser-webpack-plugin"))({
         terserOptions: {
-          ecma: 2017,
+          ecma: 2018,
           output: {
             comments: false,
           },
         },
         parallel: true,
-        cache: true,
-        sourceMap: true,
       }),
     ],
     // considers everything to be splittable, including synchronous imports from entry point graphs

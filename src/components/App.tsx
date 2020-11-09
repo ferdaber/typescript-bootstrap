@@ -1,5 +1,5 @@
-import { css } from "linaria";
-import React from "react";
+import { css, cx } from "@linaria/core";
+import React, { useState } from "react";
 
 const styles = {
   app: css`
@@ -10,6 +10,26 @@ const styles = {
 type Props = {};
 
 export function App(props: Props) {
-  return <div className={styles.app}>Hello world!</div>;
+  const [overrideColor, setOverrideColor] = useState(false);
+  return (
+    <div className={styles.app}>
+      Hello{" "}
+      <span
+        className={cx(
+          css`
+            color: red;
+          `,
+          overrideColor &&
+            css`
+              color: blue;
+            `
+        )}
+        onClick={() => setOverrideColor((x) => !x)}
+      >
+        world
+      </span>
+      !
+    </div>
+  );
 }
 export default App;

@@ -19,10 +19,11 @@ module.exports = {
     ],
     "@babel/preset-react",
     "@babel/preset-typescript",
-    "linaria/babel",
+    "module:@linaria/babel",
   ],
   plugins: [
     "@babel/plugin-proposal-numeric-separator",
+    "@babel/plugin-proposal-logical-assignment-operators",
     [
       "@babel/plugin-proposal-class-properties",
       {
