@@ -7,7 +7,7 @@ const styles = {
   `,
 };
 
-type Props = {};
+interface Props {}
 
 export function App(props: Props) {
   const [overrideColor, setOverrideColor] = useState(false);
