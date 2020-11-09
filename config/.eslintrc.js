@@ -24,6 +24,9 @@ module.exports = {
       version: "detect",
     },
   },
+  globals: {
+    render_test: "readonly",
+  },
   env: {
     browser: true,
     jest: true,
@@ -51,12 +54,22 @@ module.exports = {
     "@typescript-eslint/no-var-requires": "off",
     "@typescript-eslint/no-unused-vars": [
       "error",
-      { argsIgnorePattern: "^_", ignoreRestSiblings: true },
+      { argsIgnorePattern: "(^_|^props$)", ignoreRestSiblings: true },
     ],
     "@typescript-eslint/explicit-member-accessibility": "off",
     "@typescript-eslint/array-type": "off",
     "@typescript-eslint/no-namespace": "off",
     "@typescript-eslint/no-use-before-define": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/ban-types": [
+      "error",
+      {
+        types: {
+          "{}": false,
+        },
+        extendDefaults: true,
+      },
+    ],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "error",
     "react/prop-types": "off",

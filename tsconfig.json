@@ -36,5 +36,5 @@
     /* Experimental Options */
     "plugins": [{ "name": "typescript-styled-plugin" }]
   },
-  "include": ["src"]
+  "include": ["src/**/*"]
 }

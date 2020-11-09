@@ -1,6 +1,9 @@
-import { isValidElement } from "react";
+import React from "react";
+
 import App from "src/components/App";
+import { matchByTextContent } from "src/test-helpers";
 
 test("App", () => {
-  expect(isValidElement(App())).toBeTruthy();
+  const { getByText } = render_test(<App />);
+  expect(getByText(matchByTextContent("Hello world!"))).toBeDefined();
 });
